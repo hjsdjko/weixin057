@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.FankuijiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.FankuijiluEntity" id="fankuijiluMap">
+        <result property="fankuibianhao" column="fankuibianhao"/>
+        <result property="jiazhangzhanghao" column="jiazhangzhanghao"/>
+        <result property="jiazhangxingming" column="jiazhangxingming"/>
+        <result property="fankuixiangqing" column="fankuixiangqing"/>
+        <result property="jiaoshigonghao" column="jiaoshigonghao"/>
+        <result property="jiaoshixingming" column="jiaoshixingming"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.FankuijiluView" >
+
+		SELECT  fankuijilu.* FROM fankuijilu  fankuijilu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.FankuijiluView" >
+		SELECT * FROM fankuijilu  fankuijilu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

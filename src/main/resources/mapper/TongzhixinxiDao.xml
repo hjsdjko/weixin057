@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.TongzhixinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.TongzhixinxiEntity" id="tongzhixinxiMap">
+        <result property="tongzhibiaoti" column="tongzhibiaoti"/>
+        <result property="tongzhileixing" column="tongzhileixing"/>
+        <result property="fengmian" column="fengmian"/>
+        <result property="tongzhixiangqing" column="tongzhixiangqing"/>
+        <result property="fabushijian" column="fabushijian"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.TongzhixinxiView" >
+
+		SELECT  tongzhixinxi.* FROM tongzhixinxi  tongzhixinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.TongzhixinxiView" >
+		SELECT * FROM tongzhixinxi  tongzhixinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
